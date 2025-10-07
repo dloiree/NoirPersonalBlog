@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hitung Luas Persegi</title>
+  <style>
+    body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    }
+
+/* Container navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background: white;
+    border-bottom: 2px solid black;
+}
+
+/* Logo kiri */
+.navbar .logo {
+    font-size: 30px;
+    font-weight: bold;
+    color: black;
+    text-decoration: none;
+}
+
+/* Menu navigasi */
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    margin-right: 10px;
+    padding: 0;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    transition: color 0.3s;
+    padding: 10px;
+}
+
+.navbar ul li a:hover {
+    background-color: black;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    transition: all 0.2s ease;
+}
+
+    .card {
+      background: white;
+      padding: 30px;
+      margin-left: 760px;
+      margin-right: 760px;
+      margin-top: 200px;
+      border-radius: 10px;
+      box-shadow: 0px 4px 20px rgba(0,0,0,0.1);
+      border: 3px solid #000;
+      width: 350px;
+      text-align: center;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      font-size: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+      text-align: left;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 10px;
+      font-size: 14px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: black;
+      color: white;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #333;
+    }
+
+    .result {
+      margin-top: 20px;
+      font-size: 16px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+          <nav class="navbar">
+            <a class="logo">Noir Blog</a>
+                <ul>
+                    <li><a href="noir blog.html">Beranda</a></li>
+                </ul>
+        </nav>
+  <div class="card">
+    <h2>Hitung Volume Balok</h2>
+    <div class="form-group">
+      <label for="panjang">Panjang</label>
+      <input type="number" id="panjang" placeholder="Masukkan panjang">
+    </div>
+    <div class="form-group">
+      <label for="lebar">Lebar</label>
+      <input type="number" id="lebar" placeholder="Masukkan lebar">
+    </div>
+    <button onclick="hitungLuas()">Hitung</button>
+    <div class="result" id="hasil">Hasil: -</div>
+  </div>
+
+  <script>
+    function hitungLuas() {
+      // Ambil nilai input
+      let panjang = parseFloat(document.getElementById("panjang").value);
+      let lebar = parseFloat(document.getElementById("lebar").value);
+
+      // Validasi
+      if (isNaN(panjang) || isNaN(lebar)) {
+        document.getElementById("hasil").innerText = "Hasil: Masukkan semua nilai!";
+        return;
+      }
+
+      // Hitung Luas
+      let luas = panjang * lebar;
+
+      // Tampilkan hasil
+      document.getElementById("hasil").innerText = "Hasil: " + luas;
+    }
+  </script>
+
+</body>
+</html>
